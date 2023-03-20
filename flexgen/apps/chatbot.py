@@ -17,6 +17,7 @@ https://pypi.org/project/deepl/
 
 import argparse
 import time
+import os
 
 import numpy as np
 
@@ -190,6 +191,8 @@ def add_parser_arguments(parser):
 
 
 if __name__ == "__main__":
+
+    os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
     parser = argparse.ArgumentParser()
     add_parser_arguments(parser)
